@@ -12,6 +12,8 @@ function App() {
       item: document.querySelector("#todo-input").value,
       completed: false
     }
+
+    if(!newTodo.item) return;
     
     dispatch({type: "ADD_TODO", payload: newTodo});
     
