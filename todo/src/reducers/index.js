@@ -25,6 +25,22 @@ export function reducer(state, action){
                 ...state,
                 todos: [...state.todos, action.payload]
             }
+        case "TOGGLE_COMPLETE":
+            return {
+                ...state,
+                todos: state.todos.map(todo=>{
+                    if(todo.id === action.payload.id){
+                        return {...todo, completed: !todo.completed}
+                    }else return todo;
+                })
+            }
+        case "CLEAR_COMPLETED":
+                return {
+                    ...state,
+                    todos: state.todos.filter(todo=>{
+                        return todo.completed === false;
+                    })
+                }
         default: return state;
     }
 }

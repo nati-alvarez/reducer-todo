@@ -24,9 +24,14 @@ function App() {
         <input id="todo-input" type="text" placeholder="Add a task"/>
         <button>Add Todo</button>
       </form>
+      <button onClick={()=> dispatch({type: "CLEAR_COMPLETED"})}>Clear Completed</button>
       {state.todos.map(todo=>{
         return (
-          <div key={todo.id} className="todo">
+          <div 
+            onClick={()=> dispatch({type: "TOGGLE_COMPLETE", payload: {id: todo.id}})} 
+            key={todo.id} 
+            className={"todo " + (todo.completed? "completed": "") }
+          >
             {todo.item}
           </div>
         )
