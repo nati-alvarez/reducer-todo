@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 2rem;
 }
 
 code {
@@ -12,6 +13,41 @@ code {
     monospace;
 }
 
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.form-container button {
+  border: none;
+  padding: .4rem 1rem;
+  margin: 1rem;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.form-container input {
+  padding: .2rem 1rem;
+}
+
+.add-todo {
+  background: mediumseagreen;
+}
+
+.clear-completed {
+  background: crimson;
+}
+
+.todo {
+  padding: 1rem;
+  border: 1px solid gainsboro;
+}
+
 .todo.completed {
+  color: dimgrey;
+  background-color: gainsboro;
   text-decoration: line-through;
+  border-color: dimgray;
 }
